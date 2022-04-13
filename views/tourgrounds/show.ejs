@@ -1,15 +1,18 @@
 <% layout('layouts/boilerplate') %>
 
-<div class="card text-center">
-    <div class="card-header">
-        <%= tourground.location %>
-    </div>
-    <div class="card-body">
-      <h5 class="card-title"><%= tourground.title %></h5>
-      <p class="card-text"><%= tourground.description %></p>
-      <!--<a href="#" class="btn btn-primary">Go somewhere</a>-->
-    </div>
-    <div class="card-footer text-muted">
-        <%= tourground.created %>
+<div class="container">
+  <div class="row row-cols-1 row-cols-md-1">
+    <div class=".col-9">
+      <div class="card mb-3">
+        <div class="card-body">
+          <br>
+          <h5 class="card-title"><%= tourground.title %></h5>
+          <br>
+          <p class="card-text"><%= tourground.description %></p>
+          <p class="card-text"><small class="text-muted"><%= tourground.created %></small></p>
+        </div>
+      </div>
     </div>
   </div>
+<div>
+

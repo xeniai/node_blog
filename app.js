@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const Tourground = require('./models/tourground');
 const { truncate } = require("fs");
 const mongoSanitize = require('express-mongo-sanitize');
-const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/yelp-tour';
+const dbUrl = process.env.DB_URL;
 
 mongoose.connect(dbUrl, {
     useNewUrlParser: true,

@@ -1,0 +1,30 @@
+<% layout('layouts/boilerplate') %>
+
+<form action="/" methods="POST">
+<div class="card text-center" text-muted>
+    <div class="card-header">
+        Writing cannot express all words, words cannot encompass all ideas. - Confucius
+    </div>
+    <div class="card-body">
+        <div>
+            <label for="title">Title</label>
+            <input tyep="text" id="title" name="tourground[title]">
+        </div>
+        <div>
+            <label for="location">Quote</label>
+            <input tyep="text" id="location" name="tourground[location]">
+        </div><div>
+            <label for="location">Image</label>
+            <input tyep="text" id="image" name="tourground[image]">
+        </div>
+        <div>
+            <label for="location">Your Thoughts</label>
+            <input tyep="text" id="description" name="tourground[description]">
+        </div>
+        <button>Post Blog</button>
+    </div>
+    <div class="card-footer text-muted">
+        Everything begins with an idea. - Earl Nightingale
+    </div>
+</div>
+</form>
