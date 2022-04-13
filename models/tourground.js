@@ -6,7 +6,9 @@ const TourgroundSchema = new Schema({
     title: String,
     location: String, 
     image: String,
-    description: String
+    description: String,
+    description1: String,
+    description2: String
 });
 
 module.exports = mongoose.model('Tourground', TourgroundSchema);
