@@ -23,6 +23,7 @@ const app = express();
 const port = process.env.PORT || 3000
 
 app.use(mongoSanitize());
+app.use('/images', express.static('images'));
 
 app.engine('ejs', ejsMate);
 app.set('view engine', 'ejs');
@@ -31,6 +32,10 @@ app.set('views', path.join(__dirname, 'views'));
 app.get('/', async(req, res) => {
     const tourgrounds = await Tourground.find({});
     res.render('home', {tourgrounds})
+})
+
+app.get('/about', async(req, res) => {
+    res.render('about')
 })
 
 app.get('/tourgrounds/:id', async(req, res) => {
