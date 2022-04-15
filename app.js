@@ -4,7 +4,6 @@ const path = require('path');
 const ejsMate = require('ejs-mate');
 const mongoose = require('mongoose');
 const Tourground = require('./models/tourground');
-const Tourground = require('./models/about');
 const { truncate } = require("fs");
 const mongoSanitize = require('express-mongo-sanitize');
 const dbUrl = process.env.DB_URL;
