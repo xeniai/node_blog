@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 const Tourground = require('./models/tourground');
 const { truncate } = require("fs");
 const mongoSanitize = require('express-mongo-sanitize');
+const methodOverride = require('method-override');
 const dbUrl = process.env.DB_URL;
 
 mongoose.connect(dbUrl, {
@@ -22,6 +23,8 @@ db.once("open", () => {
 const app = express();
 const port = process.env.PORT || 3000
 
+app.use(express.urlencoded({extended:true}));
+app.use(methodOverride('_method'));
 app.use(mongoSanitize());
 app.use('/images', express.static('images'));
 
@@ -41,6 +44,17 @@ app.get('/about', async(req, res) => {
 app.get('/tourgrounds/:id', async(req, res) => {
     const tourground = await Tourground.findById(req.params.id);
     res.render('tourgrounds/show', {tourground})
+})
+
+app.get('/tourgrounds/:id/edit', async(req, res) => {
+    const tourground = await Tourground.findById(req.params.id);
+    res.render('tourgrounds/edit', {tourground})
+})
+
+app.put('/tourgrounds/:id', async(req, res) => {
+    const { id } = req.params;
+    const tourground = await Tourground.findByIdAndUpdate(id, {...req.body.tourground});
+    res.redirect(`/tourgrounds/${tourground._id}`)
 })
 
 app.listen(port, () =>{

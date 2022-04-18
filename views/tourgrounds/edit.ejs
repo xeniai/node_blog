@@ -1,0 +1,37 @@
+<% layout('layouts/boilerplate') %>
+
+<form action="/tourgrounds/<%=tourground._id%>?_method=PUT" method="POST">
+    <div>
+        <label for="title">Title</label>
+        <input type="text" id="title" name="tourground[title]" value="<%=tourground.title%>">
+    </div>
+    <div>
+        <label for="location">Quote</label>
+        <input type="text" id="location" name="tourground[location]" value="<%=tourground.location%>">
+    </div>
+    <div>
+        <label for="image">Image</label>
+        <input type="text" id="image" name="tourground[image]" value="<%=tourground.image%>">
+    </div>
+    <div>
+        <label for="description">Description</label>
+        <input type="text" id="description" name="tourground[description]" value="<%=tourground.description%>">
+    </div>
+    <div>
+        <label for="description1">Description 2</label>
+        <input type="text" id="description1" name="tourground[description1]" value="<%=tourground.description1%>">
+    </div>
+    <div>
+        <label for="description2">Description 3</label>
+        <input type="text" id="description2" name="tourground[description2]" value="<%=tourground.description2%>">
+    </div>
+    <div>
+        <label for="imageBy">Image By</label>
+        <input type="text" id="imageBy" name="tourground[imageBy]" value="<%=tourground.imageBy%>">
+    </div>
+    <div>
+        <label for="imageLink">Image Link</label>
+        <input type="text" id="imageLink" name="tourground[imageLink]" value="<%=tourground.imageLink%>">
+    </div>
+    <button>Update</button>
+</form>

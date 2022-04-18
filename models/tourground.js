@@ -8,7 +8,9 @@ const TourgroundSchema = new Schema({
     image: String,
     description: String,
     description1: String,
-    description2: String
+    description2: String,
+    imageBy: String,
+    imageLink: String
 });
 
 module.exports = mongoose.model('Tourground', TourgroundSchema);
