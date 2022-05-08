@@ -41,6 +41,10 @@ app.get('/about', async(req, res) => {
     res.render('about')
 })
 
+app.get('/tourgrounds/mx', async(req, res) => {
+    res.render('tourgrounds/mx')
+})
+
 app.get('/tourgrounds/:id', async(req, res) => {
     const tourground = await Tourground.findById(req.params.id);
     res.render('tourgrounds/show', {tourground})
