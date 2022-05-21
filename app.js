@@ -1,7 +1,9 @@
 const express = require("express");
+const nodeMailer = require('nodemailer');
 const dotenv = require('dotenv');
 const path = require('path');
 const ejsMate = require('ejs-mate');
+const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const Tourground = require('./models/tourground');
 const { truncate } = require("fs");
@@ -39,10 +41,6 @@ app.get('/', async(req, res) => {
 
 app.get('/about', async(req, res) => {
     res.render('about')
-})
-
-app.get('/tourgrounds/mx', async(req, res) => {
-    res.render('tourgrounds/mx')
 })
 
 app.get('/tourgrounds/:id', async(req, res) => {
