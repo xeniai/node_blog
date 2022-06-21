@@ -10,6 +10,7 @@ const { truncate } = require("fs");
 const mongoSanitize = require('express-mongo-sanitize');
 const methodOverride = require('method-override');
 const dbUrl = process.env.DB_URL;
+//const dbUrl = 'mongodb://localhost:27017/yelp-tour';
 
 mongoose.connect(dbUrl, {
     useNewUrlParser: true,
@@ -23,7 +24,7 @@ db.once("open", () => {
 });
 
 const app = express();
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 3005
 
 app.use(express.urlencoded({extended:true}));
 app.use(methodOverride('_method'));
@@ -41,6 +42,14 @@ app.get('/', async(req, res) => {
 
 app.get('/about', async(req, res) => {
     res.render('about')
+})
+
+app.get('/foodtrips', async(req, res) => {
+    res.render('foodtrips')
+})
+
+app.get('/activities', async(req, res) => {
+    res.render('activities')
 })
 
 app.get('/tourgrounds/:id', async(req, res) => {
