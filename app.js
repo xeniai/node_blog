@@ -52,6 +52,10 @@ app.get('/activities', async(req, res) => {
     res.render('activities')
 })
 
+app.get('/socialmedia', async(req, res) => {
+    res.render('socialmedia')
+})
+
 app.get('/tourgrounds/:id', async(req, res) => {
     const tourground = await Tourground.findById(req.params.id);
     res.render('tourgrounds/show', {tourground})
