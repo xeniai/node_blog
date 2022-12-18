@@ -10,7 +10,6 @@ const { truncate } = require("fs");
 const mongoSanitize = require('express-mongo-sanitize');
 const methodOverride = require('method-override');
 const dbUrl = process.env.DB_URL;
-//const dbUrl = 'mongodb://localhost:27017/yelp-tour';
 
 mongoose.connect(dbUrl, {
     useNewUrlParser: true,
